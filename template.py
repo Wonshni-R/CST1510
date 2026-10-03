@@ -3,8 +3,8 @@ RECORD CHECK  -  my version
 ===========================
 
 Name  :  Wonshni Reedoy
-Lane  :  AI
-Date  :  30th September 2026
+Lane  :  AI 
+Date  :  25th September 2026
 
 Run it:   python template.py
 
@@ -14,44 +14,32 @@ Delete these instructions as you replace them with your code.
 
 
 
-overlimit_count = 0
-while True:
-    label = input("Enter dataset name: ")
-    
-    if label == "quit":
-        break
+label = input("Enter dataset name: ")
+first = float(input("Enter number of rows loaded: "))
+second = float(input("Enter number of rows expected: "))
 
-    value = float(input("Enter a value:"))
-    limit = float(input("Enter a limit: "))
-    
-    
-    difference = float(limit) - float(value)  
-    percent = (float(value) / float(limit)) * 100 
+difference = float(second) - float(first)
+percent = (float(first) / float(second) *100)
 
-    if percent >=100: 
-        status = "OVER LIMIT"
-        overlimit_count +=1
-    elif percent >= 90:
-        status = "WARNING"
-    else:
-        status = "OK"
+remaining_percent = (float(difference) / float(second) * 100)
+# It indicates the percentage of capacity that is still free.
 
-    print ("=" * 34)
-    print (f" RECORD CHECK - {label}")
-    print ("=" * 34)
-    print (f" {'Used': <17}: {float(value): >10.2f}")
-    print (f" {'Total': <17}: {float(limit): >10.2f}")
-    print (f" {'Free': <17}: {float(difference): >+10.2f}")
-    print (f" {'Percent': <17}: {float(percent): >10.2f} {'%'}" )
-    print (f" {'Status': <17}: {status: >10}")
-    print ("=" * 34)
 
-print(f" {'Over Limit Count': <17}: {overlimit_count: >10}")
+print ("=" * 34)
+print (f" RECORD CHECK - {label}")
+print ("=" * 34)
+print (f" {'Used': <13}: {float(first) : >10.2f}")
+print (f" {'Total': <13}: {float(second) : >10.2f}")
+print (f" {'Free': <13}: {float(difference): >+10.2f}")
+print (f" {'Percent': <13}: {float(percent): >10.2f} {'%'}")
+print (f" {'Percent Free' : <13}: {float(remaining_percent): >10.2f} {'%'}")
+print ("=" * 34)
 
 
 # ==========================================================================
-# 5. Before you finish:
+# 4. Before you finish:
 #
 #    [ ] Run it three times with different numbers
-#    [ ] Run it with a total of 0 and note the error (do not fix it yet)    #Division by zero error
+#    [ ] Run it with a total of 0 and write the error in your journal    #Division by zero error
 #    [ ] Check every variable name says what it holds
+#    [ ] Show it to the person next to you
