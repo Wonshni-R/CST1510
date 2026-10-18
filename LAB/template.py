@@ -12,13 +12,13 @@ Work through the numbered sections in order. Each one tells you what it must do.
 Delete these instructions as you replace them with your code.
 """
 
-
+"""Process records by comparing values against limits, calculating difference and percentage, assigning status, and tracking over-limits,"""
 
 overlimit_count = 0
 while True:
     label = input("Enter dataset name: ")
     
-    if label == "quit":
+    if label == "quit":   # Stop the program when the user enters "quit".
         break
 
     value = float(input("Enter a value:"))
@@ -28,6 +28,7 @@ while True:
     difference = float(limit) - float(value)  
     percent = (float(value) / float(limit)) * 100 
 
+    # Determine the status based on the percentage used.
     if percent >=100: 
         status = "OVER LIMIT"
         overlimit_count +=1
