@@ -12,7 +12,7 @@ Work through the numbered sections in order. Each one tells you what it must do.
 Delete these instructions as you replace them with your code.
 """
 
-
+"""Comparison of loaded and expected rows to calculate dataset completion and remaining capacity."""
 
 label = input("Enter dataset name: ")
 first = float(input("Enter number of rows loaded: "))
